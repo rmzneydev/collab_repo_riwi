@@ -33,3 +33,5 @@
 
 > git config --local --unset credential.helper
 	# remove the credential helper setting specifically for the current local Git repository
+
+https://git-scm.com/cheat-sheet

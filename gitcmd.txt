@@ -23,8 +23,13 @@
 	This enables pushing and pulling changes between your local machine and the cloud-based repository.
 
 > git branch -M main
+	# Change the name of the current branch
+
+> git push -u origin main
 	# push your local changes to your online repository.
 
-> git config --global credential.helper 'cache --timeout=3600'
-	# Stores the token in memory for X amount of time. (seconds)
+> git config --global credential.helper 'cache --timeout=3600' 
+	# Caches credentials for 1 hour (3600 seconds)
 
+> git config --local --unset credential.helper
+	# remove the credential helper setting specifically for the current local Git repository

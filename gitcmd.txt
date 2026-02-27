@@ -1,0 +1,30 @@
+
+> git init
+	# initialize repository
+
+> git status
+	#  display the current state of the working directory and the staging area
+	
+> git add README.md
+> git add . (all files)
+	# add files to the staging area
+
+> git commit -m "A brief description of the changes"
+	# recording a snapshot of your repository at a specific moment in time
+
+> git config user.name "Your Name"
+	# set your local username, you provide the name as an argument within quotes:
+
+> git config user.name "youremail@example.com"
+	# set your local email 
+
+> git remote add origin <remote_repository_URL>
+	# links your local Git repository to a remote server, with "origin" used as a conventional shortcut name for that URL.
+	This enables pushing and pulling changes between your local machine and the cloud-based repository.
+
+> git branch -M main
+	# push your local changes to your online repository.
+
+> git config --global credential.helper 'cache --timeout=3600'
+	# Stores the token in memory for X amount of time. (seconds)
+

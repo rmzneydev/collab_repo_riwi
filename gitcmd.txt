@@ -34,19 +34,30 @@
 > git config --local --unset credential.helper
 	# remove the credential helper setting specifically for the current local Git repository
 
+Configuracion previa git
 
+1. Limpiar config global
 
-Accede a tu carpeta local (desde la Terminal)
+git config --global --unset user.email
+git config --global --unset-all user.name
+git config --global --remove-section user
 
-Clonar Repositorio.
+2. Accede a tu carpeta local (desde la Terminal)
+
+3. configurar nombre y email (mismo que esta en la cuenta de git)
+
+git config user.name "Your Name"
+git config user.name "youremail@example.com"
+
+4. Clonar Repositorio.
+
+Hacer estos comandos dentro de su carpeta en terminal:
 
 git clone https://github.com/rmzneydev/economy-survival-simulator.git
 cd economy-survival-simulator
-cd devs
 
-Crear rama y acceder a ella.
+5. Crear rama y acceder a ella.
 git checkout -b "feature-nombre-tarea"
-
 
 Hacer cambios y commits.
 git add .

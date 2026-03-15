@@ -9,7 +9,7 @@ def get_calculos():
 def calculate(num_figura, nombre_calculo):
     
     nombre_figura = get_figuras()[num_figura-1]
-    print(f"\nCalcular -> {nombre_calculo} de la figura: ({nombre_figura}) <-")
+    print(f"\nFigura -> ({nombre_figura})\nCalcular -> ({nombre_calculo}) ")
     
     num_calculo = get_calculos().index(nombre_calculo)
     result = ""
@@ -29,11 +29,11 @@ def calculate(num_figura, nombre_calculo):
         print("Aun no implementado =)")
     else:
         result = str(f"{result:.1f}")
-        print(f"\n[RESULTADO] El {nombre_calculo} de su ({nombre_figura}) es {result}")
+        print(f"\n[RESULTADO] {nombre_calculo} de ({nombre_figura}) es {result}")
 
 def get_area(num_figura):
     
-    pi = 3.14159
+    PI = 3.14159
 
     if num_figura == 1 or num_figura == 2: # Triángulo / Triángulo rectángulo
         base = float(input("Ingrese la base (Float): "))
@@ -54,8 +54,8 @@ def get_area(num_figura):
         return area
     
     elif num_figura == 5: # Circulo
-        radio = float(input("Ingrese el radio del Circulo (Float: )"))
-        area = pi * (radio ** 2)
+        radio = float(input("Ingrese el radio del Circulo (Float): "))
+        area = PI * (radio ** 2)
         return area
 
     elif num_figura == 6: # Cubo
@@ -66,66 +66,82 @@ def get_area(num_figura):
     elif num_figura == 7: # Esfera
         radio = float(input("Ingrese el radio de la Esfera (Float): "))
         
-        area = 4 * pi * (radio ** 2)
+        area = 4 * PI * (radio ** 2)
         return area
     
     elif num_figura == 8: # Cilindro
         radio = float(input("Introduce el radio del cilindro (Float): "))
         altura = float(input("Introduce la altura del cilindro (Float): "))
-        area = 2 * pi * radio * (radio + altura)
+        area = 2 * PI * radio * (radio + altura)
         return area
     
-    if num_figura == 9: # Prisma rectangular
-        largo = float(input("Ingrese el largo del Prima (Float): "))
-        ancho = float(input("Ingrese el ancho del Prima (Float): "))
-        alto = float(input("Ingrese el alto del Prima (Float): "))
+    elif num_figura == 9: # Prisma rectangular
+        largo = float(input("Ingrese el largo del Prisma (Float): "))
+        ancho = float(input("Ingrese el ancho del Prisma (Float): "))
+        alto = float(input("Ingrese el alto del Prisma (Float): "))
         area = 2 * ((largo * ancho) + (largo * alto) + (ancho * alto))
         return area
 
 
 def get_angulo(num_figura):
-    print("")
+
+    if num_figura == 1: # Triángulo
+        angulo1 = float(input("Ingrese el primer ángulo (Float): "))
+        angulo2 = float(input("Ingrese el segundo ángulo (Float): "))
+        tercer_angulo = 180 - (angulo1 + angulo2)
+
+        return tercer_angulo
+    
+    elif num_figura == 2: # Triángulo rectángulo
+        cateto1 = float(input("Introduce el valor del primer cateto (Float): "))
+        hipotenusa = float(input("Introduce el valor de la hipotenusa (Float): "))
+
+        return (cateto / hipotenusa) * 90
+    
+    elif num_figura == 3: # Rectangulo
+        return "90° Cada uno"
+
+    elif num_figura == 4: # Hexagono
+        return "120° Cada uno"
+    
+    elif num_figura == 5: # Circulo
+        return "360° en total"
+
+   
 
 def get_perimetro(num_figura):
     print("")
 
 def get_volumen(num_figura):
-    print("")
+
+    PI = 3.14159
+    
+    if num_figura == 6: # Cubo
+        lado = float(input("Ingrese la longitud del lado del cubo (Float): "))
+        volumen = lado ** 3
+        return volumen
+
+    elif num_figura == 7: # Esfera
+        radio = float(input("Ingrese el radio de la esfera (Float): "))
+        volumen = (4/3) * PI * (radio ** 3)
+        return volumen
+    
+    elif num_figura == 8: # Cilindro
+        radio = float(input("Introduce el radio del cilindro (Float): "))
+        altura = float(input("Introduce la altura del cilindro (Float): "))
+        volumen = PI * (radio**2) * altura
+        return volumen
+    
+    elif num_figura == 9: # Prisma rectangular
+        largo = float(input("Ingrese el largo del Prisma (Float): "))
+        ancho = float(input("Ingrese el ancho del Prisma (Float): "))
+        alto = float(input("Ingrese el alto del Prisma (Float): "))
+        volumen = largo * ancho * alto
+        return volumen
 
 def get_circunferencia(num_figura):
-    print("")
-
-
-    
-    # if num_fig == 1: # Triángulo
-    #     print(calculos[0])
-    #     print(calculos[1])
-    #     print(calculos[2])        
-    # elif num_fig == 2:# Hexágono
-    #     print(calculos[0])
-    #     print(calculos[1])
-    #     print(calculos[2])        
-    # elif num_fig == 3:# Rectángulo
-    #     print(calculos[0])
-    #     print(calculos[1])
-    #     print(calculos[2])        
-    # elif num_fig == 4:# Círculo
-    #     print(calculos[0])
-    #     print(calculos[1])
-    #     print(calculos[2])        
-    # elif num_fig == 5:# Triángulo rectángulo
-    #     print(calculos[0])
-    #     print(calculos[1])
-    #     print(calculos[2])  
-    # elif num_fig == 6:# Cubo
-    #     print(calculos[2])
-    #     print(calculos[3])  
-    # elif num_fig == 7:# Esfera
-    #     print(calculos[2])
-    #     print(calculos[3])  
-    # elif num_fig == 8:# Cilindro
-    #     print(calculos[2])
-    #     print(calculos[3])  
-    # elif num_fig == 9:# Prisma rectangular
-    #     print(calculos[2])
-    #     print(calculos[3])
+    if num_figura == 5:
+        radio = float(input("Ingrese el radio del Circulo (Float): "))
+        circunferencia = 2 * PI * radio
+        return circunferencia
+        

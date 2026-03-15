@@ -6,9 +6,13 @@ def menu_calculos(num_fig):
     calculos = get_calculos()
     calc_x_figura = []
     
+    num_fig -=1
+    
     if num_fig == 4: # CIRCLE CASE
         calc_x_figura.append(calculos[4])
-    if num_fig <=5: # 2D FIGURES
+        calc_x_figura.append(calculos[1])
+        calc_x_figura.append(calculos[2])
+    elif num_fig <=5: # 2D FIGURES
         calc_x_figura.append(calculos[0])
         calc_x_figura.append(calculos[1])
         calc_x_figura.append(calculos[2])

@@ -109,8 +109,16 @@ def get_area(num_figura):
 def get_angulo(num_figura):
 
     if num_figura == 1: # Triángulo
-        angulo1 = get_input("Ingrese un ángulo lado A (Float): ", float)
-        angulo2 = get_input("Ingrese el ángulo lado B (Float): ", float)
+               
+        valid_angulos = False
+        while not valid_angulos:
+            angulo1 = get_input("Ingrese un ángulo lado A (Float): ", float)
+            angulo2 = get_input("Ingrese el ángulo lado B (Float): ", float)
+            if (angulo1 + angulo2) >179:
+                print("La suma de los angulos A y B debe ser menor a 180")
+                continue
+            valid_angulos = True
+            
         tercer_angulo = 180 - (angulo1 + angulo2)
         return f"El Ángulo C = {tercer_angulo}°"
     

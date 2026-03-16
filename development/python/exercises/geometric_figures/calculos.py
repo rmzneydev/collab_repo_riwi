@@ -37,7 +37,7 @@ def calculate(num_figura, nombre_calculo):
         result = f"El Volumen es: {volumen:.1f} cm³"
     elif num_calculo == 4:
         circunferencia = get_circunferencia(num_figura)
-        result = f"La Circunferencia es: {result:.1f}"
+        result = f"La Circunferencia es: {circunferencia:.1f}"
 
     print("=" *15, "RESULTADO", "=" *15)
     print(result)
